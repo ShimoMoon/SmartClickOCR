@@ -180,6 +180,10 @@ app/src/main/java/io/github/shimo/smartclickocr/
 
 - **仅在本机模拟器验证过部分功能**，真机的 MediaProjection 截图行为可能存在差异
 - **ColorOS / MIUI 等国产 ROM** 需要额外允许「自启动」「后台运行」，否则容易被杀
+- **部分设备可能存在 OCR 框选纵向偏移**：由于不同 ROM 对 MediaProjection 截图坐标与系统栏的处理不同，实际识别区域可能比框选区域略高或略低。请先使用“测试 OCR”确认结果；如有偏移，请将框选区域向相反方向微调后再运行任务。
+  
+  **Some devices may have a vertical OCR selection offset**: ROMs can handle MediaProjection coordinates and system bars differently, so the actual recognition area may sit slightly above or below the selected box. Use **Test OCR** first; if needed, move the selection box slightly in the opposite direction before running the task.
+
 - **不支持绕过屏幕保护**：受保护界面无法截图
 - **需要手动授权**：无障碍服务必须用户在系统设置中开启，应用不会也无法静默开启
 
